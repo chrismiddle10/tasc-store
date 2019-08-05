@@ -1,0 +1,78 @@
+<div class="tasc-basket">
+    <h4 class="tasc-basket-head text-center my-4">Shopping Basket</h4>
+
+    <ng-container [ngSwitch]="basketService.all.length">
+        <h6 *ngSwitchCase="0" class="text-center m-2">Basket is Empty</h6>
+        <div *ngSwitchDefault class="table-responsive">
+            <table class="table product-table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="font-weight-bold" colspan="2">
+                            <strong>Product</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Unit Price</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Quantity</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Tax</strong>
+                        </th>
+                        <th class="font-weight-bold">
+                            <strong>Total</strong>
+                        </th>
+                        <th>
+                            <!-- remove button placeholder -->
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr 
+                        app-basket-item 
+                        *ngFor="let item of basketService.all" 
+                        [item]="item" 
+                        class="tasc-basket-item">
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="7">
+                            <div class="d-flex justify-content-between">
+                                <h6>
+                                    <strong>Sales Tax</strong>
+                                </h6>
+                                <strong>{{basketService.tax | currency}}</strong>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="7">
+                            <div class="d-flex justify-content-between">
+                                <h6>
+                                    <strong>Total Price</strong>
+                                </h6>
+                                <strong>{{basketService.total | currency}}</strong>
+                            </div>
+                        </td>
+                    </tr>
+                </tfoot>
+            </table>
+            <div class="d-flex justify-content-end">
+                <button 
+                    type="button" 
+                    class="btn btn-danger mx-1 waves-effect waves-light" 
+                    (click)="basketService.clear()">
+                    Clear Basket
+                </button>
+                <button 
+                    type="button" 
+                    class="btn btn-primary mx-1 waves-effect waves-light"
+                    onclick="alert( 'not implemented' )">
+                    Complete purchase
+                    <i class="fas fa-angle-right right"></i>
+                </button>
+            </div>
+        </div>
+    </ng-container>
+</div>

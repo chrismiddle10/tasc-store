@@ -1,0 +1,20 @@
+.tasc-product {
+    width: 250px;
+
+    .card-img {
+        height: 248px;
+        padding: 1rem;
+    }
+
+    .card-title {
+        p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    .card-footer {
+        padding: 0.75rem;
+    }
+}

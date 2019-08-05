@@ -1,0 +1,51 @@
+<td class="tasc-basket-item-image" scope="row">
+    <img src="{{item.image}}" alt="{{item.desc}}" />
+</td>
+<td class="tasc-basket-item-desc">
+    <a routerLink="/products/{{item.id}}" routerLinkActive="active">
+        <h5>
+            <strong>
+                {{item.desc}}
+            </strong>
+        </h5>
+        <p class="text-muted">
+            {{item.caption}}
+        </p>
+    </a>
+</td>
+<td class="td-number">
+    {{item.price | currency}}
+</td>
+<td>
+    <div class="d-flex justify-content-between">
+        <span>{{item.quantity}}</span>
+        <div class="btn-group radio-group" data-toggle="buttons">
+            <label class="btn btn-sm btn-primary btn-rounded waves-effect waves-light" (click)="basketService.add( item, -1 )">
+                <input type="radio" name="options" />
+                <i class="fas fa-minus"></i>
+            </label>
+            <label class="btn btn-sm btn-primary btn-rounded waves-effect waves-light" (click)="basketService.add( item )">
+                <input type="radio" name="options" />
+                <i class="fas fa-plus"></i>
+            </label>
+        </div>
+    </div>
+</td>
+<td class="td-number">
+    <strong>{{item.tax | currency}}</strong>
+</td>
+<td class="td-number font-weight-bold">
+    <strong>{{item.total | currency}}</strong>
+</td>
+<td class="text-right">
+    <button 
+        type="button" 
+        class="btn btn-sm btn-primary waves-effect waves-light m-0" 
+        data-toggle="tooltip" 
+        data-placement="top" 
+        title="" 
+        data-original-title="Remove item"
+        (click)="basketService.remove(item)">
+            <i class="fas fa-trash-alt"></i>
+    </button>
+</td>

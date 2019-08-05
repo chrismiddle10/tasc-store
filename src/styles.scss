@@ -1,0 +1,34 @@
+p {
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0px;
+}
+
+.btn {
+    margin: 0px;
+}
+
+.btn-sm {
+    padding: .3rem .6rem !important;
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    vertical-align: middle;
+}
+
+.text-muted {
+    font-style: italic;
+    font-size: 0.75rem;
+}
+
+.basket-badge {
+    font-size: 2rem;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+}

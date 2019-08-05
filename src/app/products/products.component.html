@@ -1,0 +1,36 @@
+
+<h4 class="text-center my-4">Products List</h4>
+
+<div class="d-flex flex-wrap justify-content-center">
+    <div *ngFor="let product of productsService.products" class="card tasc-product m-2">
+        <div class="card-body p-0">
+            <div class="card-img">
+                <a routerLink="/products/{{product.id}}" routerLinkActive="active">
+                    <img src="{{product.image}}" class="img-fluid" alt="{{product.desc}}" />
+                </a>
+            </div>
+
+            <div class="card-title p-2 mb-1 text-center" title="{{product.desc}}">
+			    <a routerLink="/products/{{product.id}}" routerLinkActive="active">
+                    <p>
+                        {{product.desc}} 
+                    </p>
+                    <p class="text-muted">
+                        {{product.caption}}
+                    </p>
+                </a>
+            </div>
+
+            <div class="card-footer">
+                <div class="d-flex justify-content-between align-items-center">
+                    <span>
+                        <strong>{{product.price | currency}}</strong>
+                    </span>
+                    <button type="button" class="btn btn-sm btn-light ml-3 p-0 z-depth-0 waves-effect waves-light" (click)="addToBasket(product)">
+                        <i class="fas fa-shopping-cart"></i> ADD TO CART
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

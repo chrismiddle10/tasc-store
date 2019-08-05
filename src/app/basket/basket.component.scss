@@ -1,0 +1,22 @@
+.tasc-basket {
+    margin: 1rem;
+
+    th {
+        border-left-style: none;
+        border-right-style: none;
+
+        &:first-child {
+            border-left-style: solid;
+        }
+
+        &:last-child {
+            border-right-style: solid;
+        }
+    }
+
+    tfoot {
+        td {
+            vertical-align: middle;
+        }
+    }
+}
